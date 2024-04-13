@@ -1,0 +1,6 @@
+docker image build -t $JOB_NAME:v1.$BUILD_ID
+docker image tag $JOB_NAME:v1.$BUILD_ID aditya702077490/$JOB_NAME:v1.$BUILD_ID
+docker image tag $JOB_NAME:v1.$BUILD_ID aditya702077490/$JOB_NAME:latest
+docker image push aditya702077490/$JOB_NAME:v1.$BUILD_ID
+docker image push aditya702077490/$JOB_NAME:latest
+docker image rmi $JOB_NAME:v1.$BUILD_ID aditya702077490/$JOB_NAME:v1.$BUILD_ID aditya702077490/$JOB_NAME:latest
